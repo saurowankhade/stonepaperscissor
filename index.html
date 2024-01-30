@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="showBox.css">
+</head>
+<style>
+
+#confetti{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+</style>
+<body>
+    <audio src="media/bgaudio.mp3" loop autoplay></audio>
+
+    <main style="visibility: visible; position: fixed; left: 20%;" >
+        <div class="score_div" style="color: aquamarine; display: flex; text-align: center; justify-content: center;">
+            <h2 class="userScore" style="font-size: 40px; ">You </h2>
+            <h2 class="computerScore" style="font-size: 40px; margin-left: 270px;">Computer</h2>
+        </div>
+
+
+        <div class="main_div">
+            <div class="sub_main">
+                 <img class="left_hand rolatedPro" src="media/left_stone.png" alt="leftHand">
+           <img class="right_hand rolatedPro" src="media/right_stone.png" alt="rightHand">
+            </div>
+          
+        </div>
+    
+    
+        <div class="container" >
+            <div class="card">
+                <img class="clickImg" src="media/main_stone.png" alt="stone_img" title="Stone">
+                <img class="clickImg" src="media/main_paper.png" alt="paper_img" title="Paper">
+                <img class="clickImg" src="media/main_scissor.png" alt="scissor_img" title="Scissor">
+            </div>
+        </div>
+        
+        <canvas id="confetti" style="visibility: hidden;"></canvas>
+
+       
+
+
+    </main>
+
+    <dialog class="second_screen" open="" style="visibility: hidden;">
+       <div class="btn">
+        <h1>Let`s Start</h1>
+       </div>
+    </dialog>
+
+    <dialog class="first_screen" open="" style="visibility: visible;">
+            <img class="img1" src="media/right1.gif" alt="walk left" >
+            <img class="img2" src="media/right1.gif" alt="walk left">
+    </dialog>
+
+    <script src="script.js"></script>
+
+    <script src="animation_end.js"></script>
+    <script src="box.js"></script>
+     
+</body>
+</html>
