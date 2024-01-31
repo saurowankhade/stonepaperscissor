@@ -55,7 +55,7 @@ body{
 }
 
 .first_screen{
-    background-image: url(media/bg.jpg);
+    background-image: url(media/wood_background_img.jpg);
     background-size: 100% 100%;
     border: 0px solid transparent;
     position: absolute;
@@ -78,12 +78,12 @@ body{
 .img1{ 
     left: 37%;
     bottom: 0;
-    animation: left_to_right 5.5s 1;
+    animation: left_to_right 5s 1;
 }
 .img2{
     right: 37%;
     bottom: 0;
-    animation: right_to_left 5.5s 1 ; 
+    animation: right_to_left 5s 1 ; 
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
@@ -94,32 +94,48 @@ body{
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.227);
+    background-color: rgba(0, 0, 0, 0.10);
     z-index: 4;
 }
-.second_screen div{
-    background-color: rgba(150, 196, 196, 0.514);
-    width: 200px;
-    height: 100px;
-    display: flex;
+.second_screen div{ 
+
+    background-image: url("media/playbg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 500px;
+    height: 250px;
+    margin-bottom: 300px;
     align-items: center;
     text-align: center;
     justify-content: center;
+    display: flex;
     cursor: pointer;
 
-    border-radius: 30px;
-    box-shadow: 10px 10px 10px 10px #e0dddd83;
 
+    /*background-image: linear-gradient(to right, rgba(247,168,47,100), rgba(237,177,84,100),rgba(248,219,180,100));
+    
+    border-radius: 10px;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(to left, rgba(247,168,47,100), rgba(237,177,84,100),rgba(248,219,180,100));;
+   */
+  
 }
+
 .second_screen div h1{
+
     font-size: 30px;
-    color: rgba(0, 0, 0, 0.736);
+    color: white;
+
+   
 
 }
 
 .second_screen div h1:hover{
     font-size: 30px;
-    color: rgba(0, 0, 0, 0.893);
+    color: white;
 
 }
 
@@ -134,7 +150,7 @@ animation: fadeIn 3s 1;
     }  
     
     100%{
-        left: 37%;
+        left: 30%;
     }
 }
 
@@ -148,7 +164,7 @@ animation: fadeIn 3s 1;
        right: 0%;
     }  
     100%{
-        right: 37%;
+        right: 30%;
     }
 }
 
