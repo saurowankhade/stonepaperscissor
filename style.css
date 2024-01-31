@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -5,7 +7,7 @@
 }
 body{
     margin: 0;
-    height: 100vh;
+    height: 100svh;
     /* background-color: #000; */
 
 }
@@ -68,24 +70,32 @@ body{
 .scale{
     transform: scale(3px);
 }
+
+.first_screen{
+    
+}
 .first_screen img{
-    height: 400px; 
-    width: 300px; 
+    height: 200px; 
+    width: 500px; 
     padding: 20px; 
+    object-fit: fill;
     position: absolute;
+    bottom: 10%;
+
 }
 
 .img1{ 
-    left: 37%;
-    bottom: 0;
-    animation: left_to_right 5s 1;
+    left: 12%;
+    /* bottom: 0; */
+    object-fit: fill;
+    animation: left_to_right 1.9s 1;
 }
 .img2{
-    right: 37%;
-    bottom: 0;
-    animation: right_to_left 5s 1 ; 
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+    right: 12%;
+    /* bottom: 0; */
+    animation: right_to_left 1.9s 1 ; 
+    /* -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); */
 }
 
 .second_screen{
@@ -94,49 +104,83 @@ body{
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.10);
+
+    background-color: rgba(0, 0, 0, 0);
     z-index: 4;
 }
 .second_screen div{ 
-
     background-image: url("media/playbg.png");
     background-size: cover;
     background-repeat: no-repeat;
-
     width: 500px;
     height: 250px;
-    margin-bottom: 300px;
     align-items: center;
     text-align: center;
     justify-content: center;
     display: flex;
     cursor: pointer;
-
-
-    /*background-image: linear-gradient(to right, rgba(247,168,47,100), rgba(237,177,84,100),rgba(248,219,180,100));
-    
-    border-radius: 10px;
-    border: 10px solid;
-    border-image-slice: 1;
-    border-width: 5px;
-    border-image-source: linear-gradient(to left, rgba(247,168,47,100), rgba(237,177,84,100),rgba(248,219,180,100));;
-   */
-  
+    border-radius: 30px 
 }
 
 .second_screen div h1{
-
     font-size: 30px;
     color: white;
-
-   
-
+    text-align: center;
 }
 
 .second_screen div h1:hover{
     font-size: 30px;
-    color: white;
+    color: white; 
+}
 
+.result_dialog{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.328);
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+.result_dialog div{
+    background-color: rgba(192, 196, 196, 0.34);
+    width: 500px;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px 10px rgba(255, 255, 255, 0.157);
+}
+
+.result_dialog div img{
+    width: 100%;
+    height: 300px;
+    object-fit: fill;
+    background-color: aliceblue;
+}
+
+.result_dialog div h1{
+    font-size: 50px;
+    margin-top: 20px;
+    font-family: 'Honk', system-ui;
+    letter-spacing: 10px;
+}
+
+.iCard{
+    padding: 20px;
+    font-size: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.506);
+    color: rgb(43, 43, 32);
+    cursor: pointer;
+    margin: 10px;
+}
+
+.iCard:hover{
+    background-color: rgba(0, 255, 255, 0.983);
+    
 }
 
 .fade_in{
@@ -150,7 +194,7 @@ animation: fadeIn 3s 1;
     }  
     
     100%{
-        left: 30%;
+        left: 12%;
     }
 }
 
@@ -164,7 +208,7 @@ animation: fadeIn 3s 1;
        right: 0%;
     }  
     100%{
-        right: 30%;
+        right: 12%;
     }
 }
 
@@ -184,5 +228,4 @@ animation: fadeIn 3s 1;
         height: 100%;
         position: fixed;
     }
-
 }
