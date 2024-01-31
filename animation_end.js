@@ -17,3 +17,16 @@ btn.addEventListener('click',()=>{
     di[1].style.visibility = 'hidden';
     main_screen.classList.add('fade_in');
 });
+
+
+
+let iCard = document.querySelectorAll('.iCard');
+let result_dialog = document.querySelector('.result_dialog');
+
+iCard[0].addEventListener('click',()=>{
+    result_dialog.style.visibility = 'hidden';
+});
+
+iCard[1].addEventListener('click',()=>{
+    location.reload(true);
+});

@@ -57,20 +57,43 @@ img.forEach((im) =>{
 
 
         
+    let result_dialog = document.querySelector('.result_dialog');
+    let result_img = document.querySelector('.result_img');
+    let result_h1 = document.querySelector('.result_h1');
+        
+
+    setTimeout( ()=>{
         if(game === 5){
+
+            result_dialog.style.visibility = 'visible';
+            if(userWin === computerWin){
+                ani.style.visibility = 'visible';
+                result_h1.innerText = 'Game Tide!!'
+                ani.style.visibility = 'hidden';
+            }
+            else if(userWin > computerWin){
+                result_h1.innerText = 'You Win';
+                result_img.src = 'media/win.gif';
+                ani.style.visibility = 'visible';
+                console.log(`1st inning win by user ${userWin}`);
+            } else{
+                result_h1.innerText = 'You Lost';
+                ani.style.visibility = 'hidden';
+                result_img.src = 'media/lose.gif';
+                console.log(`1st inning win by Computer ${computerWin}`);
+            }
+
+            
+
             game = 0;
             userWin = 0;
             computerWin =  0;
-            if(userWin === computerWin){
-                ani.style.visibility = 'visible';
-                h.innerText = "Inning win by user"
-            }
-            else if(userWin > computerWin){
-                console.log(`1st inning win by user ${userWin}`);
-            } else{
-                console.log(`1st inning win by Computer ${computerWin}`);
-            }
         }
+    }, 1500);
+        
+
+
+
     });
 });
 
