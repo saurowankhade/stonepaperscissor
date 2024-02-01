@@ -27,8 +27,8 @@ body{
 }
 
 .card img{
-    width: 150px; 
-    height: 150px; 
+    width: 100px; 
+    height: 100px; 
     cursor: pointer;
     padding: 20px;
     transition: transform 0.5s;
@@ -44,16 +44,23 @@ body{
 .hand{
     animation: tilt-shaking 0.2s 5; 
 }
+
 .main_div{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    margin-top: -90px;
 }
 .sub_main{
+    display: flex;
     border-radius: 10px;
-    box-shadow: 20px 20px 20px 20px rgba(43, 43, 43, 0.204);
+   
+}
+
+.sub_main img{
+    object-fit: fill;
+    height: 200px;
+    width: 250px;
 }
 
 .first_screen{
