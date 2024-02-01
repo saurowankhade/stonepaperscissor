@@ -36,6 +36,8 @@ let heart = document.querySelectorAll('i');
 
 let temp_result = document.querySelector('.result_tmp');
 
+let temp_result_h = document.querySelector('.result_temp_show');
+
 
 // auto play background audio
 window.addEventListener("DOMContentLoaded", event => {
@@ -74,11 +76,13 @@ function checkWhoIsWin(userChoice,computerChoice){
         case 4: heart[0].style.color = 'rgba(165, 42, 42, 0.409)'; break;
         default : console.log('Error');
     }
-    temp_result.style.visibility = 'hidden';
+   
     game++; 
     console.log(`Game played : ${game}`);
         if(userChoice === computerChoice){
+            temp_result_h.innerText = 'Game Tide!!';
             resetHand(); // reset hand to original one
+
             console.log('Game Tide!');
         } else{
             winner.forEach((win) =>{
@@ -88,10 +92,12 @@ function checkWhoIsWin(userChoice,computerChoice){
                     if(win[2] === userChoice){
                         console.log(`Winner is User`);
                         userScore.innerText = userWin+1;
+                        temp_result_h.innerText = 'You Win!!';
                         userWin++; // counting user win
                     } else{
                         console.log(`Winner is Computer`);
                         computerScore.innerText = computerWin+1;
+                        temp_result_h.innerText = 'Computer Win!!';
                         computerWin++; // counting computer win
                     }
                     
@@ -99,11 +105,14 @@ function checkWhoIsWin(userChoice,computerChoice){
             });
         }
 
+        setTimeout(()=>{
+            temp_result.style.visibility = 'hidden';
+            temp_result_h.innerText = '';
+        },1200);
 
         if(game === 5){
         setTimeout(()=>{
             resetHand();
-           
            
             result_dialog.style.visibility = 'visible'; // final result dialog show
 
@@ -125,7 +134,7 @@ function checkWhoIsWin(userChoice,computerChoice){
             computerWin =  0; // rest computer win
                 
             
-        },0);
+        },1000);
 
     }
      
@@ -178,16 +187,23 @@ function showHand(userHand,computerHand){
 let iCard = document.querySelectorAll('.iCard');
 
 iCard[0].addEventListener('click',()=>{
-    resetHand();
+    resetHand(); // origin hand (Stone)
+    resetHeart(); // reset life line
     result_dialog.style.visibility = 'hidden';
     userScore.innerText = '0';
     computerScore.innerText = '0';
     
+   
+
+});
+
+
+// reset heart -> lifeLine of game which is 5
+function resetHeart(){
     heart.forEach((he)=>{
         he.style.color = 'red';
     });
-
-});
+}
 
 iCard[1].addEventListener('click',()=>{
     location.reload(true);
