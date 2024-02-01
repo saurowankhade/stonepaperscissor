@@ -12,12 +12,21 @@ body{
 
 }
 
+main{
+    position: fixed;   
+    display: flex;
+}
+.score_div{
+     color: aquamarine;
+     display: flex; 
+     text-align: center; 
+     justify-content: center;
+     border: 1px solid black;
+}
 .container{
-    /* position: fixed; */
     text-align: center; 
 }
 .card{
-    /* display: flex; */
     position: fixed;
     bottom: 0;
     left: 40%;
@@ -37,10 +46,8 @@ body{
 
 .card img:hover, .card img:focus{
     transform: scale(1.10); 
-    background-color: aqua;
-    
+    background-color: aqua;   
 }
-
 .hand{
     animation: tilt-shaking 0.2s 5; 
 }
@@ -48,13 +55,14 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin-top: -90px;
+    text-align: center;
+    height: 100svh;
 }
 .sub_main{
     border-radius: 10px;
-    box-shadow: 20px 20px 20px 20px rgba(43, 43, 43, 0.204);
 }
+
+
 
 .first_screen{
     background-image: url(media/wood_background_img.jpg);
@@ -71,9 +79,6 @@ body{
     transform: scale(3px);
 }
 
-.first_screen{
-    
-}
 .first_screen img{
     height: 200px; 
     width: 500px; 
@@ -81,17 +86,16 @@ body{
     object-fit: fill;
     position: absolute;
     bottom: 10%;
-
 }
 
 .img1{ 
-    left: 12%;
+    left: 19%;
     /* bottom: 0; */
     object-fit: fill;
     animation: left_to_right 1.9s 1;
 }
 .img2{
-    right: 12%;
+    right: 19%;
     /* bottom: 0; */
     animation: right_to_left 1.9s 1 ; 
     /* -webkit-transform: scaleX(-1);
@@ -104,6 +108,7 @@ body{
     justify-content: center;
     width: 100%;
     height: 100vh;
+    border: 0px solid transparent;
 
     background-color: rgba(0, 0, 0, 0);
     z-index: 4;
@@ -180,13 +185,24 @@ body{
 
 .iCard:hover{
     background-color: rgba(0, 255, 255, 0.983);
-    
 }
 
 .fade_in{
-animation: fadeIn 3s 1;
+animation: bar 3s 1;
 }
 
+
+@keyframes bar{
+  0% {
+    top: -100%;
+  } 
+  50%{
+    top: -50%;
+  }
+  100% {
+    top: 0%;;
+  }
+}
 
 @keyframes left_to_right {
     0%{
@@ -194,7 +210,7 @@ animation: fadeIn 3s 1;
     }  
     
     100%{
-        left: 12%;
+        left: 18%;
     }
 }
 
@@ -208,7 +224,7 @@ animation: fadeIn 3s 1;
        right: 0%;
     }  
     100%{
-        right: 12%;
+        right: 18%;
     }
 }
 

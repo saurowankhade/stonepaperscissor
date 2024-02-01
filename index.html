@@ -23,27 +23,27 @@
 </style>
 <body>
     <audio src="media/bgaudio.mp3" loop autoplay></audio>
+    <canvas id="confetti" style="visibility: hidden;"></canvas>
 
-    <main style="visibility: visible; position: fixed;   display: flex;" >
-        <div class="score_div" style="color: aquamarine; display: flex; text-align: center; justify-content: center;
-         border: 1px solid black;">
+    <main style="background-image: url(media/bg.jpg); background-size: 100% 100%; background-repeat: no-repeat;">
+        <div class="score_div">
             <h2 class="userScore" style="font-size: 40px; ">You </h2>
-            <h2 class="computerScore" style="font-size: 40px; margin-left: 270px;">Computer</h2>
+            <h2 class="computerScore" style="font-size: 40px;">Computer</h2>
         </div>
 
 
         <div class="main_div " style=" border: 1px solid black;">
             <div class="sub_main">
-                 <img class="left_hand rolatedPro" src="media/left_stone.png" alt="leftHand">
-           <img class="right_hand rolatedPro" src="media/right_stone.png" alt="rightHand">
+                 <img class="left_hand rolatedPro" src="media/left_stone.png" alt="leftHand" title="stone">
+                <img class="right_hand rolatedPro" src="media/right_stone.png" alt="rightHand" title="stone">
             </div>
           
 
             <div class="container" >
                 <div class="card">
-                    <img class="clickImg" src="media/main_stone.png" alt="stone_img" title="Stone">
-                    <img class="clickImg" src="media/main_paper.png" alt="paper_img" title="Paper">
-                    <img class="clickImg" src="media/main_scissor.png" alt="scissor_img" title="Scissor">
+                    <img class="clickImg stone" src="media/main_stone.png" alt="stone_img" title="Stone">
+                    <img class="clickImg paper" src="media/main_paper.png" alt="paper_img" title="Paper">
+                    <img class="clickImg scissor" src="media/main_scissor.png" alt="scissor_img" title="Scissor">
                 </div>
             </div>
 
@@ -53,16 +53,13 @@
     
         
         
-        <canvas id="confetti" style="visibility: hidden;"></canvas>
+       
           
     </main>
 
     <dialog class="second_screen" open="" style="visibility: hidden;">
-       
-           
-       
        <div class="btn">
-        <h1>Let`s Play</h1>
+             <h1>Let`s Play</h1>
        </div>
     </dialog>
 
