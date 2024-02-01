@@ -8,31 +8,90 @@
 body{
     margin: 0;
     height: 100svh;
-    /* background-color: #000; */
-
 }
 
 main{
-    position: fixed;   
-    display: flex;
+    width: 100%; 
+    height: 100svh; 
+    position: fixed; 
+    background-image: url(media/homePageBg.jpg); 
+    background-repeat: no-repeat; 
+    background-size: 100% 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 .score_div{
-     color: aquamarine;
+     color: black;
      display: flex; 
      text-align: center; 
-     justify-content: center;
-     border: 1px solid black;
+     justify-content: center; 
+     align-items: center;
 }
+.score_div .sub_score_div i{
+    padding: 5px;
+    /* color: rgb(255, 0, 0); */
+    font-size: 40px;
+
+    background-image: url("media/homePageBg.jpg");
+            background-repeat: repeat;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-weight: 800;
+            -webkit-font-smoothing: antialiased;
+
+}
+
+
+.score_div .sub_score_div{
+    background-color: whitesmoke;
+    width: 400px;
+    text-align: center;
+    padding: 20px;
+}
+
+.score_div .sub_score_div h2,h3{
+    font-size: 30px;
+    margin: 10px;
+}
+.score_div .sub_score_div .box_score{
+    background-image: url(media/homePageBg.jpg);
+    color: black;
+
+}
+
+.main_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+    grid-column: 2 / 4;
+}
+.sub_main{
+    display: flex;
+    border-radius: 10px;
+}
+
+.sub_main img{
+    object-fit: fill;
+    height: 200px;
+    width: 250px;
+}
+
+/* Hand btn */
 .container{
     text-align: center; 
 }
 .card{
-    position: fixed;
-    bottom: 0;
-    left: 40%;
-    margin-bottom: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 2%;
+    /* margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 20px 20px 20px 20px rgba(43, 43, 43, 0.204);
+    box-shadow: 20px 20px 20px 20px rgba(43, 43, 43, 0.204); */
 }
 
 .card img{
@@ -48,29 +107,13 @@ main{
     transform: scale(1.10); 
     background-color: aqua;   
 }
+
+
 .hand{
     animation: tilt-shaking 0.2s 5; 
 }
 
-.main_div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    text-align: center;
-    height: 100svh;
-}
-.sub_main{
-    display: flex;
-    border-radius: 10px;
-   
-}
-
-.sub_main img{
-    object-fit: fill;
-    height: 200px;
-    width: 250px;
-}
 
 
 

@@ -45,7 +45,7 @@ img.forEach((im) =>{
         const randomNumber = Math.floor(Math.random() * 3); // generate random number form 0 to 3 -> (0,1,2)
         let computerChoice = computerDecision[randomNumber]; //computer choice according to random number
         let userChoice = im.getAttribute('title');
-
+        
         resetHand(); // reset hand possion to default stone
 
         showHand(userChoice,computerChoice); // hand changes 
