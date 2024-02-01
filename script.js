@@ -92,6 +92,7 @@ function checkWhoIsWin(userChoice,computerChoice){
                     if(win[2] === userChoice){
                         console.log(`Winner is User`);
                         userScore.innerText = userWin+1;
+                        temp_result.style.backgroundImage = ' url(media/6ob.gif)';
                         temp_result_h.innerText = 'You Win!!';
                         userWin++; // counting user win
                     } else{
@@ -106,8 +107,10 @@ function checkWhoIsWin(userChoice,computerChoice){
         }
 
         setTimeout(()=>{
-            temp_result.style.visibility = 'hidden';
             temp_result_h.innerText = '';
+            temp_result.style.backgroundImage = 'none';
+            
+            temp_result.style.visibility = 'hidden';
         },1200);
 
         if(game === 5){
@@ -121,6 +124,8 @@ function checkWhoIsWin(userChoice,computerChoice){
             }
             else if(userWin > computerWin){
                 result_h1.innerText = 'You Win';
+                result_dialog.style.backgroundImage = ' url(media/6ob.gif)';
+
                 result_img.src = 'media/win.gif';
                 console.log(`1st inning win by user ${userWin}`);
             } else{
@@ -192,9 +197,9 @@ iCard[0].addEventListener('click',()=>{
     result_dialog.style.visibility = 'hidden';
     userScore.innerText = '0';
     computerScore.innerText = '0';
-    
-   
+    result_dialog.style.backgroundImage = 'none';
 
+    
 });
 
 
@@ -202,6 +207,10 @@ iCard[0].addEventListener('click',()=>{
 function resetHeart(){
     heart.forEach((he)=>{
         he.style.color = 'red';
+    });
+
+    iCard.forEach((i)=>{
+        i.style.color = 'rgb(43, 43, 32)';
     });
 }
 
