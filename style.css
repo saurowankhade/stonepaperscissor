@@ -36,8 +36,8 @@ main{
 }
 
 .card img{
-    width: 150px; 
-    height: 150px; 
+    width: 100px; 
+    height: 100px; 
     cursor: pointer;
     padding: 20px;
     transition: transform 0.5s;
@@ -51,15 +51,25 @@ main{
 .hand{
     animation: tilt-shaking 0.2s 5; 
 }
+
 .main_div{
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     height: 100svh;
 }
 .sub_main{
+    display: flex;
     border-radius: 10px;
+   
+}
+
+.sub_main img{
+    object-fit: fill;
+    height: 200px;
+    width: 250px;
 }
 
 
@@ -96,10 +106,7 @@ main{
 }
 .img2{
     right: 19%;
-    /* bottom: 0; */
     animation: right_to_left 1.9s 1 ; 
-    /* -webkit-transform: scaleX(-1);
-    transform: scaleX(-1); */
 }
 
 .second_screen{
