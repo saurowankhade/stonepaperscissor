@@ -6,35 +6,25 @@
     <title>Document</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="showBox.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <style>
-
-#confetti{
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-}
 </style>
 <body>
     <audio src="media/bgaudio.mp3" loop autoplay></audio>
-    <canvas id="confetti" style="visibility: hidden; z-index: 2;"></canvas>
+   
 
     <main>
         <div class="score_div">
-            
             <div class="sub_score_div">
-            <i class="fa-solid fa-heart"></i>
-            <i class="fa-solid fa-heart"></i>
-            <i class="fa-solid fa-heart"></i>
-            <i class="fa-solid fa-heart"></i>
-            <i class="fa-solid fa-heart"></i>
-            <h2>You </h2>
+            <i class="fa-solid fa-heart heartcount"></i>
+            <i class="fa-solid fa-heart heartcount"></i>
+            <i class="fa-solid fa-heart heartcount"></i>
+            <i class="fa-solid fa-heart heartcount"></i>
+            <i class="fa-solid fa-heart heartcount"></i>
+            <h2>You</h2>
             <h3 class="userScore box_score">0</h3>
             <h2>Computer</h2>
             <h3 class="computerScore box_score">0</h3>
@@ -88,13 +78,16 @@
      </dialog>
     
 
-
-
+     <dialog class="result_tmp" open="" style="visibility: hidden;">
+        <div>
+            <h2 class="result_temp_show"></h2>
+        </div>
+     </dialog>
 
     <script src="script.js"></script>
-
     <script src="animation_end.js"></script>
-    <script src="box.js"></script>
+
+
      
 </body>
 </html>

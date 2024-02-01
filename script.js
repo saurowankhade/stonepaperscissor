@@ -19,20 +19,26 @@ let img = document.querySelectorAll('.clickImg');
 let left_hand = document.querySelector('.left_hand');
 let right_hand = document.querySelector('.right_hand');
 
-let ani = document.querySelector('canvas');
-let h = document.querySelector('h2');
+// let ani = document.querySelector('canvas');
+
+let userScore = document.querySelector('.userScore');
+let computerScore = document.querySelector('.computerScore');
 
 
 let result_dialog = document.querySelector('.result_dialog');
 let result_img = document.querySelector('.result_img');
 let result_h1 = document.querySelector('.result_h1');
-        
 
 const audio = document.querySelector("audio");
 
+
+let heart = document.querySelectorAll('i');
+
+let temp_result = document.querySelector('.result_tmp');
+
+
 // auto play background audio
 window.addEventListener("DOMContentLoaded", event => {
-    console.log(audio); 
    console.log( audio.play());
   });
 
@@ -45,6 +51,8 @@ img.forEach((im) =>{
         const randomNumber = Math.floor(Math.random() * 3); // generate random number form 0 to 3 -> (0,1,2)
         let computerChoice = computerDecision[randomNumber]; //computer choice according to random number
         let userChoice = im.getAttribute('title');
+
+        temp_result.style.visibility = 'visible';
         
         resetHand(); // reset hand possion to default stone
 
@@ -57,56 +65,69 @@ img.forEach((im) =>{
 
 // check who will win 
 function checkWhoIsWin(userChoice,computerChoice){
-    game++; // counting how much time game has played
+   // counting how much time game has played
+    switch(game){
+        case 0: heart[4].style.color = 'rgba(165, 42, 42, 0.409)'; break
+        case 1: heart[3].style.color = 'rgba(165, 42, 42, 0.409)'; break;
+        case 2: heart[2].style.color = 'rgba(165, 42, 42, 0.409)'; break;
+        case 3: heart[1].style.color = 'rgba(165, 42, 42, 0.409)'; break;
+        case 4: heart[0].style.color = 'rgba(165, 42, 42, 0.409)'; break;
+        default : console.log('Error');
+    }
+    temp_result.style.visibility = 'hidden';
+    game++; 
     console.log(`Game played : ${game}`);
         if(userChoice === computerChoice){
+            resetHand(); // reset hand to original one
             console.log('Game Tide!');
         } else{
             winner.forEach((win) =>{
                 if( (win[0] === userChoice || win[0] === computerChoice) && 
                 (win[1] === userChoice || win[1] === computerChoice) ){
+                    resetHand(); // reset hand to original one
                     if(win[2] === userChoice){
                         console.log(`Winner is User`);
-                        ani.style.visibility = 'visible'; // winner aimation show
-                        h.innerText = "User Win"; 
+                        userScore.innerText = userWin+1;
                         userWin++; // counting user win
                     } else{
                         console.log(`Winner is Computer`);
-                        h.innerText = 'Computer Win!';
+                        computerScore.innerText = computerWin+1;
                         computerWin++; // counting computer win
                     }
+                    
                 }
             });
         }
 
 
+        if(game === 5){
         setTimeout(()=>{
-            resetHand(); // reset hand to original one
-            ani.style.visibility = 'hidden'; // animation hidden
-            h.innerText = 'You';
+            resetHand();
+           
+           
+            result_dialog.style.visibility = 'visible'; // final result dialog show
 
-
-            if(game === 5){
-                result_dialog.style.visibility = 'visible'; // final result dialog show
-                if(userWin === computerWin){
-                    result_h1.innerText = 'Game Tide!!'
-                }
-                else if(userWin > computerWin){
-                    result_h1.innerText = 'You Win';
-                    result_img.src = 'media/win.gif';
-                    ani.style.visibility = 'visible';
-                    console.log(`1st inning win by user ${userWin}`);
-                } else{
-                    result_h1.innerText = 'You Lost';
-                    result_img.src = 'media/lose.gif';
-                    console.log(`1st inning win by Computer ${computerWin}`);
-                }
-                
-                game = 0; // reset game count
-                userWin = 0; // reset user win count
-                computerWin =  0; // rest computer win
+            if(userWin === computerWin){
+                result_h1.innerText = 'Game Tide!!'
             }
-        },2000);
+            else if(userWin > computerWin){
+                result_h1.innerText = 'You Win';
+                result_img.src = 'media/win.gif';
+                console.log(`1st inning win by user ${userWin}`);
+            } else{
+                result_h1.innerText = 'You Lost';
+                result_img.src = 'media/lose.gif';
+                console.log(`1st inning win by Computer ${computerWin}`);
+            }
+            
+            game = 0; // reset game count
+            userWin = 0; // reset user win count
+            computerWin =  0; // rest computer win
+                
+            
+        },0);
+
+    }
      
   
       
@@ -159,7 +180,12 @@ let iCard = document.querySelectorAll('.iCard');
 iCard[0].addEventListener('click',()=>{
     resetHand();
     result_dialog.style.visibility = 'hidden';
-    ani.style.visibility = 'hidden';
+    userScore.innerText = '0';
+    computerScore.innerText = '0';
+    
+    heart.forEach((he)=>{
+        he.style.color = 'red';
+    });
 
 });
 
