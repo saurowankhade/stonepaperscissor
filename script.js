@@ -126,11 +126,11 @@ function checkWhoIsWin(userChoice,computerChoice){
                 result_h1.innerText = 'You Win';
                 result_dialog.style.backgroundImage = ' url(media/6ob.gif)';
 
-                result_img.src = 'media/win.gif';
+                result_img.src = 'media/win_gif1.gif';
                 console.log(`1st inning win by user ${userWin}`);
             } else{
                 result_h1.innerText = 'You Lost';
-                result_img.src = 'media/lose.gif';
+                result_img.src = 'media/lose_gif.gif';
                 console.log(`1st inning win by Computer ${computerWin}`);
             }
             
