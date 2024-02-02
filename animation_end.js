@@ -15,6 +15,8 @@ img1.addEventListener('animationend',()=>{
 btn.addEventListener('click',()=>{
     di[0].style.visibility = 'hidden';
     di[1].style.visibility = 'hidden';
-    // main_screen.classList.add('fade_in');
+    main_screen.classList.add('fade_in');
 });
-
+main_screen.addEventListener('animationend',()=>{
+    main_screen.classList.remove('fade_in');
+});

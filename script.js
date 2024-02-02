@@ -1,4 +1,9 @@
 const computerDecision = ['Stone','Paper','Scissor'];
+
+const originalSrc = 'media/bgaudio.mp3';
+const loseSrc = 'media/lose.mp3';
+const tieSrc = 'media/tie.mp3';
+const winSrc = 'media/win.mp3';
  
 // winner possibilities 
 const winner = [
@@ -41,10 +46,14 @@ let temp_result_h = document.querySelector('.result_temp_show');
 
 // auto play background audio
 window.addEventListener("DOMContentLoaded", event => {
-   console.log( audio.play());
+    audio.play();
   });
 
+  setTimeout(()=>{
+    audio.play();
+    audio.loop = true;
 
+  },10);
 
 // console.log(img);
 
@@ -80,25 +89,28 @@ function checkWhoIsWin(userChoice,computerChoice){
     game++; 
     console.log(`Game played : ${game}`);
         if(userChoice === computerChoice){
-            temp_result_h.innerText = 'Game Tide!!';
+            temp_result_h.innerText = 'Draw!!';
+            audio.src = tieSrc;
             resetHand(); // reset hand to original one
-
-            console.log('Game Tide!');
+            console.log('Draw!');
         } else{
             winner.forEach((win) =>{
                 if( (win[0] === userChoice || win[0] === computerChoice) && 
                 (win[1] === userChoice || win[1] === computerChoice) ){
+                    
                     resetHand(); // reset hand to original one
                     if(win[2] === userChoice){
+                        audio.src = winSrc;
                         console.log(`Winner is User`);
                         userScore.innerText = userWin+1;
                         temp_result.style.backgroundImage = ' url(media/6ob.gif)';
                         temp_result_h.innerText = 'You Win!!';
                         userWin++; // counting user win
                     } else{
+                        audio.src = loseSrc ;
                         console.log(`Winner is Computer`);
                         computerScore.innerText = computerWin+1;
-                        temp_result_h.innerText = 'Computer Win!!';
+                        temp_result_h.innerText = 'You Lost!!';
                         computerWin++; // counting computer win
                     }
                     
@@ -107,30 +119,40 @@ function checkWhoIsWin(userChoice,computerChoice){
         }
 
         setTimeout(()=>{
+            console.log(`Game Count for audio is 1 : ${game}`);
+            if(game !== 0){
+                audio.src = originalSrc;
+                console.log(`Game Count for audio is 2 : ${game}`);
+            } 
+
+            console.log(`Game Count for audio is 3 : ${game}`);
+
             temp_result_h.innerText = '';
             temp_result.style.backgroundImage = 'none';
-            
             temp_result.style.visibility = 'hidden';
         },1200);
 
         if(game === 5){
         setTimeout(()=>{
             resetHand();
-           
+
             result_dialog.style.visibility = 'visible'; // final result dialog show
 
             if(userWin === computerWin){
-                result_h1.innerText = 'Game Tide!!'
+                result_h1.innerText = 'Game Tie!!'
+                result_img.src = 'media/win.gif';
+                audio.src = tieSrc;
             }
             else if(userWin > computerWin){
+                audio.src = winSrc;
                 result_h1.innerText = 'You Win';
                 result_dialog.style.backgroundImage = ' url(media/6ob.gif)';
-
                 result_img.src = 'media/win.gif';
                 console.log(`1st inning win by user ${userWin}`);
             } else{
+                audio.src = loseSrc;
                 result_h1.innerText = 'You Lost';
-                result_img.src = 'media/lose.gif';
+                result_img.src = 'media/win.gif';
                 console.log(`1st inning win by Computer ${computerWin}`);
             }
             
@@ -194,6 +216,7 @@ let iCard = document.querySelectorAll('.iCard');
 iCard[0].addEventListener('click',()=>{
     resetHand(); // origin hand (Stone)
     resetHeart(); // reset life line
+    audio.src = originalSrc;
     result_dialog.style.visibility = 'hidden';
     userScore.innerText = '0';
     computerScore.innerText = '0';
