@@ -90,6 +90,7 @@ function checkWhoIsWin(userChoice,computerChoice){
     console.log(`Game played : ${game}`);
         if(userChoice === computerChoice){
             temp_result_h.innerText = 'Draw!!';
+            
             audio.src = tieSrc;
             resetHand(); // reset hand to original one
             console.log('Draw!');
@@ -103,7 +104,7 @@ function checkWhoIsWin(userChoice,computerChoice){
                         audio.src = winSrc;
                         console.log(`Winner is User`);
                         userScore.innerText = userWin+1;
-                        temp_result.style.backgroundImage = ' url(media/6ob.gif)';
+                        temp_result.style.backgroundImage = ' url(media/celebration.gif)';
                         temp_result_h.innerText = 'You Win!!';
                         userWin++; // counting user win
                     } else{
@@ -146,13 +147,13 @@ function checkWhoIsWin(userChoice,computerChoice){
             else if(userWin > computerWin){
                 audio.src = winSrc;
                 result_h1.innerText = 'You Win';
-                result_dialog.style.backgroundImage = ' url(media/6ob.gif)';
-                result_img.src = 'media/win_gif1.gif';
+                result_dialog.style.backgroundImage = ' url(media/celebration.gif)';
+                result_img.src = 'media/win.gif';
                 console.log(`1st inning win by user ${userWin}`);
             } else{
                 audio.src = loseSrc;
                 result_h1.innerText = 'You Lost';
-                result_img.src = 'media/lose_gif.gif';
+                result_img.src = 'media/lose.gif';
                 console.log(`1st inning win by Computer ${computerWin}`);
             }
             
