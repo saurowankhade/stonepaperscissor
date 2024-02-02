@@ -139,7 +139,7 @@ function checkWhoIsWin(userChoice,computerChoice){
 
             if(userWin === computerWin){
                 result_h1.innerText = 'Game Tie!!'
-                result_img.src = 'media/draw.gif';
+                result_img.src = 'media/draw_gif.gif';
                 audio.src = tieSrc;
             }
             else if(userWin > computerWin){
