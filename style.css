@@ -95,6 +95,7 @@ main{
     object-fit: fill;
     height: 200px;
     width: 250px;
+    margin: 10px;
 }
 
 /* Hand btn */
