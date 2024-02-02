@@ -238,7 +238,13 @@ main{
 
 }
 .result_dialog div{
-    background-color: rgba(192, 196, 196, 0.34);
+
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to left, #f7a82f, #edb154,#f8dbb4);
+  
+    background-color: wheat;
     width: 500px;
     height: auto;
     padding: 20px;
@@ -254,24 +260,39 @@ main{
 }
 
 .result_dialog div h1{
+    background-image: url(media/homePageBg.jpg);
+     background-repeat: repeat;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 200px;
+            font-size: 120px;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Fantasy','Copperplate', 
+                            sans-serif;
+            font-weight: 800;
+            -webkit-font-smoothing: antialiased;
+
+
     font-size: 50px;
     margin-top: 20px;
-    font-family: 'Honk', system-ui;
     letter-spacing: 10px;
 }
 
 .iCard{
+
     padding: 20px;
     font-size: 40px;
     border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.506);
+    background-color: wheat;
     color: rgb(43, 43, 32);
     cursor: pointer;
     margin: 10px;
 }
 
 .iCard:hover{
-    background-color: rgba(0, 255, 255, 0.983);
+    background-color: white;
 }
 .fade_in{
  animation: bar 2s 1;
