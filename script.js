@@ -90,7 +90,7 @@ function checkWhoIsWin(userChoice,computerChoice){
     console.log(`Game played : ${game}`);
         if(userChoice === computerChoice){
             temp_result_h.innerText = 'Draw!!';
-            
+
             audio.src = tieSrc;
             resetHand(); // reset hand to original one
             console.log('Draw!');
@@ -124,14 +124,13 @@ function checkWhoIsWin(userChoice,computerChoice){
             if(game !== 0){
                 audio.src = originalSrc;
                 console.log(`Game Count for audio is 2 : ${game}`);
-            } 
-
+            }
             console.log(`Game Count for audio is 3 : ${game}`);
 
             temp_result_h.innerText = '';
             temp_result.style.backgroundImage = 'none';
             temp_result.style.visibility = 'hidden';
-        },1200);
+        },1500);
 
         if(game === 5){
         setTimeout(()=>{
