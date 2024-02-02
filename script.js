@@ -90,7 +90,6 @@ function checkWhoIsWin(userChoice,computerChoice){
     console.log(`Game played : ${game}`);
         if(userChoice === computerChoice){
             temp_result_h.innerText = 'Draw!!';
-
             audio.src = tieSrc;
             resetHand(); // reset hand to original one
             console.log('Draw!');
@@ -140,7 +139,7 @@ function checkWhoIsWin(userChoice,computerChoice){
 
             if(userWin === computerWin){
                 result_h1.innerText = 'Game Tie!!'
-                result_img.src = 'media/win.gif';
+                result_img.src = 'media/draw.gif';
                 audio.src = tieSrc;
             }
             else if(userWin > computerWin){
