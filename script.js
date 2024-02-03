@@ -179,14 +179,14 @@ function showHand(userHand,computerHand){
         switch(userHand){
             case 'Stone' : left_hand_source = 'media/left_stone.png'; break;
             case 'Scissor' : left_hand_source = 'media/left_scissor.png'; break;
-            case 'Paper' : left_hand_source = 'media/left_Paper.png'; break;
+            case 'Paper' : left_hand_source = 'media/left_paper.png'; break;
             default: console.log('Error');
         }
 
         switch(computerHand){
             case 'Stone' : right_hand_source = 'media/right_stone.png'; break;
             case 'Scissor' : right_hand_source = 'media/right_scissor.png'; break;
-            case 'Paper' : right_hand_source = 'media/right_Paper.png'; break;
+            case 'Paper' : right_hand_source = 'media/right_paper.png'; break;
             default: console.log('Error');
         }
 
