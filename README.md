@@ -1,7 +1,7 @@
  # StonePaperScissor 
 
-  _[Demo](https://stonepaperscissor-lovat.vercel.app/)_ is a stone paper and scissor game using HTML CSS and JS
-
+  _[StonePaperScissor](https://stonepaperscissor-lovat.vercel.app/)_ is a stone paper and scissor game using HTML CSS and JS
+  
  ![image](https://github.com/saurowankhade/stonepaperscissor/assets/98818353/3964207e-0d10-45cb-827b-7f40d420d610)
 
   ### Video
