@@ -2,13 +2,11 @@
 
   _[Demo](https://stonepaperscissor-lovat.vercel.app/)_ is a stone paper and scissor game using HTML CSS and JS
 
-
-
- _()_
  ![image](https://github.com/saurowankhade/stonepaperscissor/assets/98818353/3964207e-0d10-45cb-827b-7f40d420d610)
 
   ### Video
- _[Watch How to play ]([https://stonepaperscissor-lovat.vercel.app/](https://github.com/saurowankhade/stonepaperscissor/assets/98818353/1ab3d5ec-0cdd-44c1-acc3-04330f86b213))_
+  
+  _[Watch how to play](https://github.com/saurowankhade/stonepaperscissor/assets/98818353/1ab3d5ec-0cdd-44c1-acc3-04330f86b213)_
 
  ## Author
  + Saurabh Wankhade - _[saurowankhade](https://github.com/saurowankhade/)_
