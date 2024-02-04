@@ -157,7 +157,7 @@ function checkWhoIsWin(userChoice,computerChoice){
             computerWin =  0; // rest computer win
                 
             
-        },1000);
+        },1500);
 
     }
      
